@@ -4,7 +4,7 @@ My way of collecting all components on a single page.
 
 ## Installation
 
-Drop the contents of the `dist` folder into your `vendor` or similar, and reference the files as you do any other JS/CSS resource. You only need them on the page you want to show your components on.
+Drop the contents of the `dist` folder into your `vendor` (maybe using a [subtree merge][submerge]?) or similar, and reference the files as you do any other JS/CSS resource. You only need them on the page you want to show your components on.
 
 Build your components section like this:
 
@@ -32,3 +32,5 @@ There are a couple of helper classes to put on individual components, if necessa
 
 
 The `componentize-app` script renders a *Table Of Contents* layer on the right side of the screen, where all the components are listed in alphabetical order, clickable of course :)
+
+[submerge]: http://greystate.dk/resources/subtree-merge/?rf=dist&u=greystate&b=master&r=componentize&lf=vendor/componentize
