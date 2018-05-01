@@ -2,7 +2,7 @@
 
 My way of collecting all components on a single page.
 
-![Componentize Screenshot](assets/screenshot_componentize.jpg =800x)
+<img src="assets/screenshot_componentize.jpg" width="800" alt="Componentize Screenshot" />
 
 ## Installation
 
