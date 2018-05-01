@@ -2,7 +2,7 @@
 
 My way of collecting all components on a single page.
 
-<img src="assets/screenshot_componentize.jpg" srcset="assets/screenshot_componentize_2x.jpg 2x" alt="Componentize Screenshot" />
+<img src="assets/screenshot_componentize.jpg" alt="Componentize Screenshot" />
 
 ## Installation
 
