@@ -2,6 +2,8 @@
 
 My way of collecting all components on a single page.
 
+![Componentize Screenshot](assets/screenshot_componentize.jpg =800x)
+
 ## Installation
 
 Drop the contents of the `dist` folder into your `vendor` (maybe using a [subtree merge][submerge]?) or similar, and reference the files as you do any other JS/CSS resource. You only need them on the page you want to show your components on.
@@ -19,6 +21,9 @@ Build your components section like this:
 		<!-- Your component markup here -->
 		
 	</div>
+	
+	<!-- Additional components -->
+	
 </section>
 ```
 
