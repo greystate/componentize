@@ -15,8 +15,9 @@
 @media screen and (max-width: 768px) {
   .components {
     width: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .components-toc {
@@ -111,4 +112,17 @@
 }
 .component.large-space-before {
   padding-top: 250px;
+}
+@media screen and (max-width: 768px) {
+  .component::before {
+    position: static;
+    text-align: center;
+    padding: 4px;
+    background: #eee;
+    display: inline-block;
+  }
+  .component.solid-bg,
+  .component.alt-bg {
+    border-radius: 0;
+  }
 }
