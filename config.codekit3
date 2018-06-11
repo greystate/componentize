@@ -71,6 +71,13 @@
 		"sI": 0,
 		"sM": 1,
 		"sU": 0
+		},
+	"\/test.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/dist\/test.html",
+		"oF": 1
 		}
 	},
 "hooks": [
@@ -83,7 +90,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 546731916
+	"lastBuiltDate": 550435988
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -2246,7 +2253,7 @@
 			}
 		},
 	"uglifyReservedNamesString": "$",
-	"websiteRelativeRoot": "\/build"
+	"websiteRelativeRoot": "\/"
 	},
 "settingsFileVersion": "3"
 }
