@@ -41,7 +41,7 @@ override the default `#505050` as specified in the distributed CSS - and *still*
 CSS Custom Properties can be set in a style attribute, e.g.:
 
 ```html
-<div class="component solid-bg" style="--bg-color: #f2da09;">
+<div class="component solid-bg" style="--bg-color: yellow;">
 	<!-- A dark, pure-CSS Batman logo that needs a yellow background maybe? -->
 </div>
 ```
