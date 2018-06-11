@@ -20,8 +20,9 @@
 	
 	@media screen and (max-width: @compact_width_breakpoint) {
 		width: auto;
-		padding-left: 10px;
-		padding-right: 10px;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
@@ -63,7 +64,7 @@
 
 .components-description {
 	padding-bottom: 2em;
-	border-bottom: 8px solid #fff;
+	border-bottom: 8px solid #eee;
 	margin-bottom: 2em;
 	
 	ul {
@@ -120,4 +121,16 @@
 	&.space-before { padding-top: 100px; }
 	&.large-space-after  { padding-bottom: 250px; }
 	&.large-space-before { padding-top: 250px; }
+	
+	@media screen and (max-width: @compact_width_breakpoint) {
+		&::before {
+			position: static;
+			text-align: center;
+			padding: 4px;
+			background: #eee;
+			display: inline-block;
+		}
+		
+		&.solid-bg, &.alt-bg { border-radius: 0; }
+	}
 }
