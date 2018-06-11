@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Components Test Page</title>
+	<link rel="stylesheet" href="/dist/componentize.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style>
+		body > h1 { text-align: center; }
+	</style>
+</head>
+<body>
+
+<h1>Components Test Page</h1>
+
+<section class="components">
+	<div class="components-description">
+		<p>This is just a test page for the various component classes</p>
+	</div>
+	
+	<div class="component" data-title="Plain Component">
+		<p>Here's two plain paragraphs of text to make it easier to see how everything flows.</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+		</p>
+	</div>
+
+	<div class="component alt-bg" data-title="Alternate Background Component">
+		<p>
+			<mark>
+				This component has the <code>.alt-bg</code> class set, so should be shown on
+				a transparent checkerboard background.
+			</mark>
+		</p>
+	</div>
+
+	<div class="component solid-bg" data-title="Solid Background Component">
+		<p>
+			<mark>
+				This component has the <code>.solid-bg</code> class set, so should be shown on
+				a solid color background.
+			</mark>
+		</p>
+	</div>
+
+	<div class="component solid-bg" style="--bg-color:#ff8000" data-title="Solid Background Component (Custom)">
+		<p>
+			<mark>
+				This component has the <code>.solid-bg</code> class set <em>and</em> provides a specific background color
+				to use, so should be shown on a solid orange background.
+			</mark>
+		</p>
+	</div>
+	
+</section>
+
+<script src="/dist/componentize-app.js"></script>
+
+</body>
+</html>

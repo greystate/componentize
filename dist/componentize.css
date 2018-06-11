@@ -86,6 +86,7 @@
 .component.solid-bg {
   padding: 25px;
   background: #505050;
+  background: var(--bg-color, #505050);
   border-radius: 12px;
 }
 .component.alt-bg {

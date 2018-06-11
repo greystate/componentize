@@ -35,6 +35,16 @@ There are a couple of helper classes to put on individual components, if necessa
 - `.solid-bg` : Renders a solid color behind the component
 - `.space-before`, `.space-after`, `.large-space-before` & `.large-space-after` : Makes extra room for the previous/next component (handy if a component does some position shifting, e.g. pulling an icon partly outside of the box)
 
+When using `.solid-bg` it's possible to specify a specific background color using a **CSS Custom Property** (aka *CSS Variable*) named `--bg-color`.
+Because of the way CSS Custom Properties work, you can set this variable on any ancestor (e.g. the `<body>`) element to effectively
+override the default `#505050` as specified in the distributed CSS - and *still* override it on a specific component, if needed.
+CSS Custom Properties can be set in a style attribute, e.g.:
+
+```html
+<div class="component solid-bg" style="--bg-color: yellow;">
+	<!-- A dark, pure-CSS Batman logo that needs a yellow background maybe? -->
+</div>
+```
 
 The `componentize-app` script renders a *Table Of Contents* layer on the right side of the screen, where all the components are listed in alphabetical order, clickable of course :)
 
