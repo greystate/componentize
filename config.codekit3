@@ -9,6 +9,17 @@
 	],
 "creatorBuild": "26680",
 "files": {
+	"\/assets\/screenshot_componentize.jpg": {
+		"ft": 16384,
+		"iS": 257682,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/dist\/assets\/screenshot_componentize.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
 	"\/dist": {
 		"ft": 65536,
 		"oA": 1,
