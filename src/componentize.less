@@ -122,6 +122,12 @@
 	&.large-space-after  { padding-bottom: 250px; }
 	&.large-space-before { padding-top: 250px; }
 	
+	// This is what I previously referred to as the `assertRendered()` mixin
+	&:empty, > *:empty {
+		min-height: 3em;
+		background: hsla(120, 50%, 55%, 0.5);
+	}
+	
 	@media screen and (max-width: @compact_width_breakpoint) {
 		&::before {
 			position: static;

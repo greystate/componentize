@@ -113,6 +113,11 @@
 .component.large-space-before {
   padding-top: 250px;
 }
+.component:empty,
+.component > *:empty {
+  min-height: 3em;
+  background: rgba(83, 198, 83, 0.5);
+}
 @media screen and (max-width: 768px) {
   .component::before {
     position: static;
