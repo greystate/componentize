@@ -44,12 +44,12 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/src\/componentize-app.coffee": {
+	"\/src\/componentize.coffee": {
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
 		"oA": 0,
-		"oAP": "\/dist\/componentize-app.js",
+		"oAP": "\/dist\/componentize.js",
 		"oF": 0,
 		"oS": 0,
 		"sC": 0,
