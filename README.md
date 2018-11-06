@@ -46,6 +46,6 @@ CSS Custom Properties can be set in a style attribute, e.g.:
 </div>
 ```
 
-The `componentize-app` script renders a *Table Of Contents* layer on the right side of the screen, where all the components are listed in alphabetical order, clickable of course :)
+The `componentize.js` script renders a *Table Of Contents* layer on the right side of the screen, where all the components are listed in alphabetical order, clickable of course :)
 
 [submerge]: http://greystate.dk/resources/subtree-merge/?rf=dist&u=greystate&b=master&r=componentize&lf=vendor/componentize
