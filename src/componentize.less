@@ -24,6 +24,17 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
+	
+	&.filtered .component:not(.matched) { display: none; }
+}
+
+.components-filter {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	> * + * { margin-left: 10px; }
 }
 
 .components-toc {
@@ -40,9 +51,7 @@
 	overflow-y: scroll;
 	max-height: calc(100vh - 20px);
 	
-	&:hover {
-		opacity: 0.9;
-	}
+	&:hover { opacity: 0.9; }
 	
 	ul {
 		list-style: none;
