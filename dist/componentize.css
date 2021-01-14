@@ -20,6 +20,18 @@
     padding-right: 0;
   }
 }
+.components.filtered .component:not(.matched) {
+  display: none;
+}
+.components-filter {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.components-filter > * + * {
+  margin-left: 10px;
+}
 .components-toc {
   transition: opacity 0.3s linear;
   position: fixed;

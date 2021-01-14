@@ -1,9 +1,15 @@
-'use strict';
+"use strict";
 
 (function () {
+  var FILTERING_CLASS, KEY_ESC, MATCHING_CLASS;
+  MATCHING_CLASS = 'matched';
+  FILTERING_CLASS = 'filtered';
+  KEY_ESC = 27;
+
   (function () {
-    var component, componentID, componentLink, componentName, components, entries, i, items, len, tocElement;
+    var component, componentID, componentLink, componentName, components, componentsFilter, entries, i, input, items, label, len, tocElement;
     components = document.querySelector('.components');
+
     if (components != null) {
       items = Array.from(components.querySelectorAll('.component')).sort(function (a, b) {
         return a.dataset.title > b.dataset.title;
@@ -11,19 +17,71 @@
       tocElement = document.createElement('section');
       tocElement.classList.add('components-toc');
       entries = ['<ul>'];
+
       for (i = 0, len = items.length; i < len; i++) {
         component = items[i];
         componentID = component.getAttribute('id');
         componentName = component.dataset.title;
         componentLink = componentID != null ? componentID : componentName.replace(/\s+/g, '-');
-        entries.push('<li><a href="#' + componentLink + '">' + componentName + '</a></li>');
+        entries.push("<li><a href=\"#".concat(componentLink, "\">").concat(componentName, "</a></li>"));
+
         if (componentID == null) {
           component.setAttribute('id', componentLink);
         }
       }
+
       entries.push('</ul>');
       tocElement.innerHTML = entries.join('\n');
-      return components.appendChild(tocElement);
+      components.appendChild(tocElement);
+      componentsFilter = document.createElement('div');
+      componentsFilter.classList.add('components-filter');
+      label = document.createElement('label');
+      label.htmlFor = 'components-filter';
+      label.textContent = 'Filter components';
+      input = document.createElement('input');
+      input.id = 'components-filter';
+      input.type = 'text';
+      input.placeholder = "E.g. 'gallery'";
+      input.addEventListener('keyup', function (event) {
+        var j, k, len1, len2, matched, matching, query, results, results1;
+
+        if (event.keyCode === KEY_ESC || input.value === '') {
+          components.classList.remove(FILTERING_CLASS);
+          matching = document.querySelectorAll(".".concat(MATCHING_CLASS));
+          input.value = '';
+          results = [];
+
+          for (j = 0, len1 = matching.length; j < len1; j++) {
+            component = matching[j];
+            results.push(component.classList.remove(MATCHING_CLASS));
+          }
+
+          return results;
+        } else {
+          query = event.target.value;
+
+          if (query.length > 2) {
+            components.classList.add(FILTERING_CLASS);
+            matched = document.querySelectorAll("[data-title*=".concat(query, " i]"));
+
+            if (matched != null) {
+              results1 = [];
+
+              for (k = 0, len2 = matched.length; k < len2; k++) {
+                component = matched[k];
+                results1.push(component.classList.add(MATCHING_CLASS));
+              }
+
+              return results1;
+            }
+          }
+        }
+      });
+      componentsFilter.appendChild(label);
+      componentsFilter.appendChild(input);
+      return components.insertBefore(componentsFilter, components.firstElementChild);
     }
   })();
-}).call(undefined);
+}).call(void 0);
+
+//# sourceMappingURL=componentize.js.map
