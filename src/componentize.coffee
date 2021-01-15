@@ -3,6 +3,23 @@ FILTERING_CLASS = 'filtered'
 KEY_ESC = 27
 
 do ->
+	createStateToggler = () ->
+		toggler = document.createElement 'button'
+		toggler.type = 'button'
+		toggler.textContent = 'Toggle state(s)'
+		toggler.classList.add 'state-toggle'
+		toggler.addEventListener 'click', (event) ->
+			wrapper = event.target.parentNode
+			component = wrapper.firstElementChild
+			states = wrapper.dataset.states.split ','
+			currentState = states.shift()
+			component.classList.remove currentState unless currentState is 'nil'
+			newState = states[0]
+			component.classList.add newState unless newState is 'nil'
+			states.push currentState
+			wrapper.dataset.states = states.join ','
+		toggler
+	
 	components = document.querySelector '.components'
 
 	if components?
@@ -11,6 +28,9 @@ do ->
 		tocElement.classList.add 'components-toc'
 		entries = [ '<ul>' ]
 		for component in items
+			states = component.dataset.states?.split ','
+			if states?
+				component.appendChild createStateToggler()
 			componentID = component.getAttribute 'id' 
 			componentName = component.dataset.title
 			componentLink = componentID ? componentName.replace /\s+/g, '-'
@@ -49,4 +69,3 @@ do ->
 		componentsFilter.appendChild label
 		componentsFilter.appendChild input
 		components.insertBefore(componentsFilter, components.firstElementChild)
-		

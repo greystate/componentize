@@ -136,6 +136,14 @@
 		background: hsla(120, 50%, 55%, 0.5);
 	}
 	
+	.state-toggle {
+		position: absolute;
+		top: 0;
+		right: -10px;
+		transform: translateX(100%);
+		
+	}
+	
 	@media screen and (max-width: @compact_width_breakpoint) {
 		&::before {
 			position: static;
@@ -146,5 +154,10 @@
 		}
 		
 		&.solid-bg, &.alt-bg { border-radius: 0; }
+		
+		.state-toggle {
+			right: 0;
+			transform: none;
+		}
 	}
 }

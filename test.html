@@ -7,6 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<style>
 		body > h1 { text-align: center; }
+		
+		.plain { padding: 1em; }
+		.plain.fat { font-weight: bold; }
+		.plain.inverse { background: black; color: white; }
+		
 	</style>
 </head>
 <body>
@@ -18,12 +23,14 @@
 		<p>This is a test page for the various component classes</p>
 	</div>
 	
-	<div class="component" data-title="Plain Component">
-		<p>Here's two plain paragraphs of text to make it easier to see how everything flows.</p>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-			dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-		</p>
+	<div class="component" data-title="Plain Component" data-states="nil,fat,inverse">
+		<div class="plain">
+			<p>Here's two plain paragraphs of text to make it easier to see how everything flows.</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			</p>
+		</div>
 	</div>
 
 	<div class="component alt-bg" data-title="Alternate Background Component">
