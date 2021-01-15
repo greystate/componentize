@@ -7,7 +7,37 @@
   KEY_ESC = 27;
 
   (function () {
-    var component, componentID, componentLink, componentName, components, componentsFilter, entries, i, input, items, label, len, tocElement;
+    var component, componentID, componentLink, componentName, components, componentsFilter, createStateToggler, entries, i, input, items, label, len, ref, states, tocElement;
+
+    createStateToggler = function createStateToggler() {
+      var toggler;
+      toggler = document.createElement('button');
+      toggler.type = 'button';
+      toggler.textContent = 'Toggle state(s)';
+      toggler.classList.add('state-toggle');
+      toggler.addEventListener('click', function (event) {
+        var component, currentState, newState, states, wrapper;
+        wrapper = event.target.parentNode;
+        component = wrapper.firstElementChild;
+        states = wrapper.dataset.states.split(',');
+        currentState = states.shift();
+
+        if (currentState !== 'nil') {
+          component.classList.remove(currentState);
+        }
+
+        newState = states[0];
+
+        if (newState !== 'nil') {
+          component.classList.add(newState);
+        }
+
+        states.push(currentState);
+        return wrapper.dataset.states = states.join(',');
+      });
+      return toggler;
+    };
+
     components = document.querySelector('.components');
 
     if (components != null) {
@@ -20,6 +50,12 @@
 
       for (i = 0, len = items.length; i < len; i++) {
         component = items[i];
+        states = (ref = component.dataset.states) != null ? ref.split(',') : void 0;
+
+        if (states != null) {
+          component.appendChild(createStateToggler());
+        }
+
         componentID = component.getAttribute('id');
         componentName = component.dataset.title;
         componentLink = componentID != null ? componentID : componentName.replace(/\s+/g, '-');

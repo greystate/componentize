@@ -125,6 +125,12 @@
   min-height: 3em;
   background: hsla(120, 50%, 55%, 0.5);
 }
+.component .state-toggle {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  transform: translateX(100%);
+}
 @media screen and (max-width: 768px) {
   .component::before {
     position: static;
@@ -136,5 +142,9 @@
   .component.solid-bg,
   .component.alt-bg {
     border-radius: 0;
+  }
+  .component .state-toggle {
+    right: 0;
+    transform: none;
   }
 }
