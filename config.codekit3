@@ -114,6 +114,22 @@
 		"sI": 0,
 		"sU": 0
 		},
+	"/src/less/filter.less": {
+		"aP": 1,
+		"bl": 1,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 0,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/dist/filter.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/src/less/toc.less": {
 		"aP": 1,
 		"bl": 1,
