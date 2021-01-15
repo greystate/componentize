@@ -66,6 +66,17 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"/src/js/componentize.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "/dist/assets/componentize.min.js",
+		"oF": 1,
+		"sC": 0,
+		"tS": 0
+		},
 	"/src/less/component.less": {
 		"aP": 1,
 		"bl": 1,
