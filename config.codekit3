@@ -66,6 +66,22 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"/src/less/component.less": {
+		"aP": 1,
+		"bl": 1,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 0,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/dist/component.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/src/less/componentize.less": {
 		"aP": 1,
 		"bl": 1,
