@@ -13,9 +13,9 @@
 		"ft": 16384,
 		"iS": 257682,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/dist/assets/screenshot_componentize.jpg",
-		"oF": 0,
+		"oF": 1,
 		"oIPL": 0,
 		"opt": 1,
 		"ou": "lpckwebp-none",
@@ -32,9 +32,9 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/dist/LICENSE",
-		"oF": 0
+		"oF": 1
 		},
 	"/README.md": {
 		"cB": 0,
@@ -54,17 +54,6 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
-		},
-	"/src/componentize.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "/dist/componentize.js",
-		"oF": 0,
-		"oS": 0,
-		"sC": 0,
-		"tS": 1
 		},
 	"/src/js/componentize.js": {
 		"bF": 4,
@@ -241,7 +230,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 550435988
+	"lastBuiltDate": 632436377.34211802
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
