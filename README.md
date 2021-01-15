@@ -8,6 +8,8 @@ My way of collecting all components on a single page.
 
 Drop the contents of the `dist` folder into your `vendor` (maybe using a [subtree merge][submerge]?) or similar, and reference the files as you do any other JS/CSS resource. You only need them on the page you want to show your components on.
 
+## Usage
+
 Build your components section like this:
 
 ```html
@@ -26,6 +28,26 @@ Build your components section like this:
 	
 </section>
 ```
+
+### Component States
+
+Sometimes a component exist in a couple of variations, which can be expressed with CSS classes - you can list these in a `data-states` attribute to have the component automatically present a toggle button for them, e.g.:
+
+```html
+<div class="component" data-title="Spinner" data-states="paused,running">
+	<div class="spinner paused">[°•°°°°]</div>
+</div>
+```
+
+You can add a *no-state* state as well, by adding `nil` to `data-states`, e.g.:
+
+```html
+<div class="component" data-title="Spinner" data-states="nil,paused,running">
+	<div class="spinner paused">[°•°°°°]</div>
+</div>
+```
+
+
 
 ### Helper classes
 
@@ -46,7 +68,10 @@ CSS Custom Properties can be set in a style attribute, e.g.:
 </div>
 ```
 
-The `componentize.js` script renders a *Table Of Contents* layer on the right side of the screen, where all the components are listed in alphabetical order, clickable of course :)
-It also adds a textbox for live-filtering the components on the page.
+The `componentize.js` adds some nice enhancements:
+
+- Renders a *Table Of Contents* layer on the right side of the screen, where all the components are listed in alphabetical order, clickable of course :)
+- Adds a textbox for live-filtering the components on the page.
+- Adds a state toggle for components that has a `data-states` attribute
 
 [submerge]: http://greystate.dk/resources/subtree-merge/?rf=dist&u=greystate&b=master&r=componentize&lf=vendor/componentize
