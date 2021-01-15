@@ -77,6 +77,17 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/src/js/toc.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "/dist/toc.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/src/js/toggler.js": {
 		"bF": 0,
 		"ft": 64,
