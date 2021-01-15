@@ -3,32 +3,8 @@
 // + + + + + + + + + + + + + + 
 @compact_width_breakpoint: 768px;
 
-.components {
-	&::before {
-		content: attr(data-size);
-		display: inline-block;
-		padding: 4px 8px;
-		background: rgba(255, 255, 255, 0.8);
-		color: #000;
-		position: fixed;
-		top: 4px;
-		right: 4px;
-	}
-	
-	max-width: 75%;
-	margin: 1em auto;
-	
-	@media screen and (max-width: @compact_width_breakpoint) {
-		width: auto;
-		max-width: none;
-		padding-left: 0;
-		padding-right: 0;
-	}
-	
-	&.filtered .component:not(.matched) { display: none; }
-}
-
+@import "wrapper";
+@import "filter";
 @import "toc";
 @import "description";
 @import "component";
-@import "filter";
