@@ -1,0 +1,51 @@
+.component {
+	position: relative;
+	margin-top: 3em;
+	margin-bottom: 5em;
+	
+	// Display the name of the component to its left (if provided in the `data-title` attribute)
+	&::before {
+		font-size: 12px;
+
+		position: absolute;
+		font-weight: normal;
+		font-family: Inconsolata, Andale Mono, monospace, sans-serif;
+		display: block;
+		content: attr(data-title);
+		color: #000;
+		right: 100%;
+		margin-right: 20px;
+	}
+	
+	
+	// This is what I previously referred to as the `assertRendered()` mixin
+	&:empty, > *:empty {
+		min-height: 3em;
+		background: hsla(120, 50%, 55%, 0.5);
+	}
+	
+	.state-toggle {
+		position: absolute;
+		top: 0;
+		right: -10px;
+		transform: translateX(100%);
+		
+	}
+	
+	@media screen and (max-width: @compact_width_breakpoint) {
+		&::before {
+			position: static;
+			text-align: center;
+			padding: 4px;
+			background: #eee;
+			display: inline-block;
+		}
+		
+		&.solid-bg, &.alt-bg { border-radius: 0; }
+		
+		.state-toggle {
+			right: 0;
+			transform: none;
+		}
+	}
+}
