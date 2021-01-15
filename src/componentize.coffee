@@ -51,17 +51,19 @@ do ->
 		input.type = 'text'
 		input.placeholder = "E.g. 'gallery'"
 		input.addEventListener 'keyup', (event) ->
+			currentlyMatching = document.querySelectorAll ".#{MATCHING_CLASS}"
 			if event.keyCode is KEY_ESC or input.value is ''
 				components.classList.remove FILTERING_CLASS
-				matching = document.querySelectorAll ".#{MATCHING_CLASS}"
 				input.value = ''
-				for component in matching
+				for component in currentlyMatching
 					component.classList.remove MATCHING_CLASS
 			else
 				query = event.target.value
 				if query.length > 2
+					for component in currentlyMatching
+						component.classList.remove MATCHING_CLASS
 					components.classList.add FILTERING_CLASS
-					matched = document.querySelectorAll "[data-title*=#{query} i]"
+					matched = document.querySelectorAll "[data-title*=\"#{query}\" i]"
 					if matched?
 						for component in matched
 							component.classList.add MATCHING_CLASS

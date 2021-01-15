@@ -79,16 +79,16 @@
       input.type = 'text';
       input.placeholder = "E.g. 'gallery'";
       input.addEventListener('keyup', function (event) {
-        var j, k, len1, len2, matched, matching, query, results, results1;
+        var currentlyMatching, j, k, l, len1, len2, len3, matched, query, results, results1;
+        currentlyMatching = document.querySelectorAll(".".concat(MATCHING_CLASS));
 
         if (event.keyCode === KEY_ESC || input.value === '') {
           components.classList.remove(FILTERING_CLASS);
-          matching = document.querySelectorAll(".".concat(MATCHING_CLASS));
           input.value = '';
           results = [];
 
-          for (j = 0, len1 = matching.length; j < len1; j++) {
-            component = matching[j];
+          for (j = 0, len1 = currentlyMatching.length; j < len1; j++) {
+            component = currentlyMatching[j];
             results.push(component.classList.remove(MATCHING_CLASS));
           }
 
@@ -97,14 +97,19 @@
           query = event.target.value;
 
           if (query.length > 2) {
+            for (k = 0, len2 = currentlyMatching.length; k < len2; k++) {
+              component = currentlyMatching[k];
+              component.classList.remove(MATCHING_CLASS);
+            }
+
             components.classList.add(FILTERING_CLASS);
-            matched = document.querySelectorAll("[data-title*=".concat(query, " i]"));
+            matched = document.querySelectorAll("[data-title*=\"".concat(query, "\" i]"));
 
             if (matched != null) {
               results1 = [];
 
-              for (k = 0, len2 = matched.length; k < len2; k++) {
-                component = matched[k];
+              for (l = 0, len3 = matched.length; l < len3; l++) {
+                component = matched[l];
                 results1.push(component.classList.add(MATCHING_CLASS));
               }
 
