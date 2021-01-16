@@ -148,3 +148,35 @@
 .component.large-space-before {
   padding-top: 250px;
 }
+.component-states-modifiers {
+  border: none;
+  padding: 2em 10px 10px;
+  margin: -12px 0 0;
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+.component-states-modifiers legend {
+  display: inline-block;
+  position: relative;
+  top: 2em;
+}
+.component-states-modifiers > div {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+.component-states-modifiers > div > * + * {
+  margin-left: 1em;
+}
+.component-states-modifiers > div + div {
+  margin-left: 3em;
+}
+.component-states-modifiers > div input + label {
+  margin-left: 0.5ch;
+}

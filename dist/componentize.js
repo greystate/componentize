@@ -1,27 +1,98 @@
 (function () {
 	'use strict';
 
-	function createStateToggler() {
-		const toggler = document.createElement('button');
-		toggler.type = 'button';
-		toggler.textContent = 'Toggle state(s)';
-		toggler.classList.add('state-toggle');
-		toggler.addEventListener('click', (event) => {
-			const wrapper = event.target.parentNode;
-			const component = wrapper.firstElementChild;
-			const states = wrapper.dataset.states.split(',');
-			const currentState = states.shift();
-			const newState = states[0];
-			if (currentState !== 'nil') {
-				component.classList.remove(currentState);
+	function createModifierSwitches(componentWrapper) {
+		const togglesElement = document.createElement('fieldset');
+		togglesElement.classList.add('component-states-modifiers');
+		
+		const legend = document.createElement('legend');
+		legend.textContent = 'States & Modifiers';
+		
+		togglesElement.appendChild(legend);
+		
+		const identifier = componentWrapper.dataset.title.toLowerCase().replace(/\s+/, '-');
+		
+		const states = componentWrapper.dataset.states?.split(',');
+		const modifiers = componentWrapper.dataset.modifiers?.split(',');
+		
+		if (modifiers) {
+			const wrapper = document.createElement('div');
+			Array.from(modifiers).forEach((modifier) => {
+				const field = document.createElement('div');
+				const input = document.createElement('input');
+				input.type = 'checkbox';
+				input.name = `mod-${modifier}`;
+				input.value = modifier;
+				input.id = `${identifier}-mod-${modifier}`;
+				
+				const label = document.createElement('label');
+				label.htmlFor = input.id;
+				label.textContent = modifier;
+				
+				field.appendChild(input);
+				field.appendChild(label);
+				
+				wrapper.appendChild(field);
+			});
+			
+			togglesElement.appendChild(wrapper);
+		}
+		
+		if (states) {
+			const wrapper = document.createElement('div');
+			Array.from(states).forEach((state, index) => {
+				const field = document.createElement('div');
+				const input = document.createElement('input');
+				input.type = 'radio';
+				input.name = 'component-state';
+				input.value = state;
+				input.id = `${identifier}-state-${state}`;
+				input.checked = index == 0;
+				
+				const label = document.createElement('label');
+				label.htmlFor = input.id;
+				label.textContent = (state == 'nil' ? '(none)' : state);
+				
+				field.appendChild(input);
+				field.appendChild(label);
+				
+				wrapper.appendChild(field);
+			});
+			
+			togglesElement.appendChild(wrapper);
+		}
+		
+		setEventHandler(togglesElement);
+		
+		return togglesElement
+	}
+
+	function setEventHandler(element) {
+		element.addEventListener('click', (event) => {
+			const target = event.target;
+			if (target.nodeName !== 'INPUT') { return }
+			const value = target.value;
+			const componentWrapper = element.parentNode;
+			const component = componentWrapper.firstElementChild;
+			
+			if (target.type === 'radio') {
+				setState(component, value);
+			} else {
+				component.classList.toggle(value);
 			}
-			if (newState !== 'nil') {
-				component.classList.add(newState);
-			}
-			states.push(currentState);
-			wrapper.dataset.states = states.join(',');
 		});
-		return toggler
+	}
+
+	function setState(element, newState) {
+		const states = element.parentNode.dataset.states.split(',');
+		states.forEach((state) => {
+			if (state !== 'nil') {
+				element.classList.remove(state);
+			}
+		});
+		if (newState !== 'nil') {
+			element.classList.add(newState);
+		}
 	}
 
 	function tableOfContents(items) {
@@ -31,9 +102,10 @@
 		tocElement.classList.add('components-toc');
 		const entries = [ '<ul>' ];
 		items.forEach((component) => {
-			const states = component.dataset.states?.split(',');
-			if (states) {
-				component.appendChild(createStateToggler());
+			const states = component.dataset.states;
+			const modifiers = component.dataset.modifiers;
+			if (states || modifiers) {
+				component.appendChild(createModifierSwitches(component));
 			}
 			const componentID = component.getAttribute('id');
 			const componentName = component.dataset.title;
