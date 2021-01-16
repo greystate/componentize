@@ -1,0 +1,44 @@
+.component-states-modifiers {
+	font-family: monospace;
+	
+	opacity: 0;
+	transition: opacity 0.3s linear;
+
+	.component:hover & { opacity: 1; }
+	
+	position: absolute;
+	border: none;
+	padding: 2em 10px 10px;
+	margin: -12px 0 0;
+	border-radius: 6px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	max-width: max-content;
+	
+	legend {
+		display: inline-block;
+		position: relative;
+		top: 2em;
+	}
+	
+	> div {
+		display: inline-flex;
+		flex-direction: row;
+		align-items: center;
+		
+		> * + * { margin-left: 1em; }
+		
+		+ div {
+			margin-left: 3em;
+		}
+		
+		input + label {
+			cursor: pointer;
+			padding: 2px;
+			padding-left: 0.5ch;
+		}
+	}
+}
+

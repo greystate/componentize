@@ -22,12 +22,6 @@
 		"q": 100,
 		"rq": 75
 		},
-	"/dist": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "/dist/dist",
-		"oF": 0
-		},
 	"/LICENSE": {
 		"cB": 0,
 		"ft": 8192,
@@ -77,6 +71,17 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/src/js/modifiers.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "/dist/modifiers.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/src/js/toc.js": {
 		"bF": 0,
 		"ft": 64,
@@ -84,17 +89,6 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "/dist/toc.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
-	"/src/js/toggler.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "/dist/toggler.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -179,6 +173,22 @@
 		"sI": 0,
 		"sU": 0
 		},
+	"/src/less/states-modifiers.less": {
+		"aP": 1,
+		"bl": 1,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 0,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/dist/states-modifiers.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/src/less/toc.less": {
 		"aP": 1,
 		"bl": 1,
@@ -230,7 +240,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 632436377.34211802
+	"lastBuiltDate": 632450578.21155202
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
