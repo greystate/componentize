@@ -49,7 +49,13 @@ You can add a *no-state* state as well, by adding `nil` to `data-states`, e.g.:
 
 Modifiers works in a similar fashion, except they're represented by checkboxes.
 So it's possible to have one or many modifiers selected at a time, but only a
-single state at any time.
+single state at any time. They're specified with the `data-modifiers` attribute:
+
+```html
+<div class="component" data-title="Card" data-modifiers="inverse,hi-contrast">
+	<div class="card">...</div>
+</div>
+```
 
 
 ### Helper classes
