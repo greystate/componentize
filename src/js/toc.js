@@ -1,4 +1,4 @@
-import createStateToggler from './toggler'
+import createToggles from './modifiers'
 
 function tableOfContents(items) {
 	// items = (Array.from components.querySelectorAll '.component').sort (a, b) => a.dataset.title > b.dataset.title
@@ -7,9 +7,10 @@ function tableOfContents(items) {
 	tocElement.classList.add('components-toc')
 	const entries = [ '<ul>' ]
 	items.forEach((component) => {
-		const states = component.dataset.states?.split(',')
-		if (states) {
-			component.appendChild(createStateToggler())
+		const states = component.dataset.states
+		const modifiers = component.dataset.modifiers
+		if (states || modifiers) {
+			component.appendChild(createToggles(component))
 		}
 		const componentID = component.getAttribute('id')
 		const componentName = component.dataset.title
