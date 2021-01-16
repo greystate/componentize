@@ -33,6 +33,7 @@
   display: none;
 }
 .components-toc {
+  font-family: monospace;
   transition: opacity 0.3s linear;
   position: fixed;
   right: 10px;
@@ -149,6 +150,10 @@
   padding-top: 250px;
 }
 .component-states-modifiers {
+  font-family: monospace;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+  position: absolute;
   border: none;
   padding: 2em 10px 10px;
   margin: -12px 0 0;
@@ -160,6 +165,9 @@
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
+}
+.component:hover .component-states-modifiers {
+  opacity: 1;
 }
 .component-states-modifiers legend {
   display: inline-block;
@@ -178,5 +186,7 @@
   margin-left: 3em;
 }
 .component-states-modifiers > div input + label {
-  margin-left: 0.5ch;
+  cursor: pointer;
+  padding: 2px;
+  padding-left: 0.5ch;
 }

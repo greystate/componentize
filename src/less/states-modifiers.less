@@ -1,4 +1,12 @@
 .component-states-modifiers {
+	font-family: monospace;
+	
+	opacity: 0;
+	transition: opacity 0.3s linear;
+
+	.component:hover & { opacity: 1; }
+	
+	position: absolute;
 	border: none;
 	padding: 2em 10px 10px;
 	margin: -12px 0 0;
@@ -27,7 +35,9 @@
 		}
 		
 		input + label {
-			margin-left: 0.5ch;
+			cursor: pointer;
+			padding: 2px;
+			padding-left: 0.5ch;
 		}
 	}
 }
