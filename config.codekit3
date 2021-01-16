@@ -22,12 +22,6 @@
 		"q": 100,
 		"rq": 75
 		},
-	"/dist": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "/dist/dist",
-		"oF": 0
-		},
 	"/LICENSE": {
 		"cB": 0,
 		"ft": 8192,
@@ -246,7 +240,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets_green",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 632436377.34211802
+	"lastBuiltDate": 632450166.05082095
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

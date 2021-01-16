@@ -29,9 +29,9 @@ Build your components section like this:
 </section>
 ```
 
-### Component States
+### Component States and/or Modifiers
 
-Sometimes a component exist in a couple of variations, which can be expressed with CSS classes - you can list these in a `data-states` attribute to have the component automatically present a toggle button for them, e.g.:
+Sometimes a component exist in a couple of variations, which can be expressed with CSS classes - you can list these in a `data-states` attribute to have the component automatically present radiobuttons for them, e.g.:
 
 ```html
 <div class="component" data-title="Spinner" data-states="paused,running">
@@ -47,6 +47,9 @@ You can add a *no-state* state as well, by adding `nil` to `data-states`, e.g.:
 </div>
 ```
 
+Modifiers works in a similar fashion, except they're represented by checkboxes.
+So it's possible to have one or many modifiers selected at a time, but only a
+single state at any time.
 
 
 ### Helper classes
