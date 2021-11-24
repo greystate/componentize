@@ -9,6 +9,22 @@
   ],
   "creatorBuild" : "34264",
   "files" : {
+    "\/.nova\/Artwork" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/dist\/.nova\/Artwork",
+      "oF" : 0
+    },
+    "\/.nova\/Configuration.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/dist\/.nova\/Configuration-min.json",
+      "oF" : 0,
+      "oO" : 0,
+      "oS" : 1
+    },
     "\/assets\/screenshot_componentize.jpg" : {
       "ft" : 16384,
       "iS" : 257682,
