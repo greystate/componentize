@@ -14,7 +14,7 @@ function createModifierSwitches(componentWrapper) {
 	
 	if (modifiers) {
 		const wrapper = document.createElement('div')
-		Array.from(modifiers).forEach((modifier) => {
+		modifiers.forEach((modifier) => {
 			const field = document.createElement('div')
 			const input = document.createElement('input')
 			input.type = 'checkbox'
@@ -37,7 +37,7 @@ function createModifierSwitches(componentWrapper) {
 	
 	if (states) {
 		const wrapper = document.createElement('div')
-		Array.from(states).forEach((state, index) => {
+		states.forEach((state, index) => {
 			const field = document.createElement('div')
 			const input = document.createElement('input')
 			input.type = 'radio'
