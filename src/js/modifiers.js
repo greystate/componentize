@@ -41,7 +41,7 @@ function createModifierSwitches(componentWrapper) {
 			const field = document.createElement('div')
 			const input = document.createElement('input')
 			input.type = 'radio'
-			input.name = 'component-state'
+			input.name = `${identifier}-state`
 			input.value = state
 			input.id = `${identifier}-state-${state}`
 			input.checked = index == 0
