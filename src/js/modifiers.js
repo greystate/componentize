@@ -1,17 +1,17 @@
 function createModifierSwitches(componentWrapper) {
 	const togglesElement = document.createElement('fieldset')
 	togglesElement.classList.add('component-states-modifiers')
-	
+
 	const legend = document.createElement('legend')
 	legend.textContent = 'States & Modifiers'
-	
+
 	togglesElement.appendChild(legend)
-	
-	
+
 	const identifier = getIdentifierFromName(componentWrapper.dataset.title)
+
 	const states = componentWrapper.dataset.states?.split(',')
 	const modifiers = componentWrapper.dataset.modifiers?.split(',')
-	
+
 	if (modifiers) {
 		const wrapper = document.createElement('div')
 		modifiers.forEach((modifier) => {
@@ -21,20 +21,20 @@ function createModifierSwitches(componentWrapper) {
 			input.name = `mod-${modifier}`
 			input.value = modifier
 			input.id = `${identifier}-mod-${modifier}`
-			
+
 			const label = document.createElement('label')
 			label.htmlFor = input.id
 			label.textContent = modifier
-			
+
 			field.appendChild(input)
 			field.appendChild(label)
-			
+
 			wrapper.appendChild(field)
 		})
-		
+
 		togglesElement.appendChild(wrapper)
 	}
-	
+
 	if (states) {
 		const wrapper = document.createElement('div')
 		states.forEach((state, index) => {
@@ -45,22 +45,22 @@ function createModifierSwitches(componentWrapper) {
 			input.value = state
 			input.id = `${identifier}-state-${state}`
 			input.checked = index == 0
-			
+
 			const label = document.createElement('label')
 			label.htmlFor = input.id
 			label.textContent = (state == 'nil' ? '(none)' : state)
-			
+
 			field.appendChild(input)
 			field.appendChild(label)
-			
+
 			wrapper.appendChild(field)
 		})
-		
+
 		togglesElement.appendChild(wrapper)
 	}
-	
+
 	setEventHandler(togglesElement)
-	
+
 	return togglesElement
 }
 
@@ -71,7 +71,7 @@ function setEventHandler(element) {
 		const value = target.value
 		const componentWrapper = element.parentNode
 		const component = componentWrapper.firstElementChild
-		
+
 		if (target.type === 'radio') {
 			setState(component, value)
 		} else {
