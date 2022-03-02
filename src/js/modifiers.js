@@ -7,8 +7,8 @@ function createModifierSwitches(componentWrapper) {
 	
 	togglesElement.appendChild(legend)
 	
-	const identifier = componentWrapper.dataset.title.toLowerCase().replace(/\s+/, '-')
 	
+	const identifier = getIdentifierFromName(componentWrapper.dataset.title)
 	const states = componentWrapper.dataset.states?.split(',')
 	const modifiers = componentWrapper.dataset.modifiers?.split(',')
 	
@@ -78,6 +78,12 @@ function setEventHandler(element) {
 			component.classList.toggle(value)
 		}
 	})
+}
+
+function getIdentifierFromName(name) {
+	let identifier = name.toLowerCase().replaceAll(/\s+/g, '-')
+	identifier = identifier.replaceAll(/[()%&?]/g, '')
+	return identifier
 }
 
 function setState(element, newState) {
