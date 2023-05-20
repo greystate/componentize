@@ -7,13 +7,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<style>
 		body > h1 { text-align: center; }
-		
+
 		.plain { padding: 1em; }
-		
+
 		/* Modifier(s) */
 		.plain.fat { font-weight: bold; }
 		.plain.inverse { background: black; color: white; }
-		
+
 		/* State(s) */
 		.plain.selected {
 			box-shadow: 0 0 0 5px black inset;
@@ -31,7 +31,7 @@
 	<div class="components-description">
 		<p>This is a test page for the various component classes</p>
 	</div>
-	
+
 	<div class="component" data-title="Plain Component" data-modifiers="fat,inverse" data-states="nil,selected">
 		<div class="plain">
 			<p>Here's two plain paragraphs of text to make it easier to see how everything flows.</p>
@@ -39,6 +39,18 @@
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 			</p>
+		</div>
+	</div>
+
+	<div class="component" data-title="Component w/ modifier" data-modifiers="fat,inverse" data-states="nil,selected">
+		<div class="plain inverse">
+			<p>This should have the 'inverse' modifier selected already.</p>
+		</div>
+	</div>
+
+	<div class="component" data-title="Component w/ state" data-modifiers="fat,inverse" data-states="nil,selected">
+		<div class="plain selected">
+			<p>This should have the 'selected' state pre-selected.</p>
 		</div>
 	</div>
 
@@ -68,13 +80,13 @@
 			</mark>
 		</p>
 	</div>
-	
+
 	<div class="component" data-title="Empty Component (no content)"><!-- Intentionally left empty for testing --></div>
-	
+
 	<div class="component" data-title="Empty Component (w/ empty content element)">
 		<div><!-- Intentionally left empty for testing --></div>
 	</div>
-	
+
 </section>
 
 <script src="/dist/componentize.js"></script>

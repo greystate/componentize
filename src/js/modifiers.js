@@ -6,6 +6,7 @@ function createModifierSwitches(componentWrapper) {
 	legend.textContent = 'States & Modifiers'
 
 	togglesElement.appendChild(legend)
+	const innerComponent = componentWrapper.firstElementChild
 
 	const identifier = getIdentifierFromName(componentWrapper.dataset.title)
 
@@ -21,6 +22,7 @@ function createModifierSwitches(componentWrapper) {
 			input.name = `mod-${modifier}`
 			input.value = modifier
 			input.id = `${identifier}-mod-${modifier}`
+			input.checked = innerComponent.classList.contains(modifier)
 
 			const label = document.createElement('label')
 			label.htmlFor = input.id
@@ -44,7 +46,7 @@ function createModifierSwitches(componentWrapper) {
 			input.name = `${identifier}-state`
 			input.value = state
 			input.id = `${identifier}-state-${state}`
-			input.checked = index == 0
+			input.checked = innerComponent.classList.contains(state) || index == 0;
 
 			const label = document.createElement('label')
 			label.htmlFor = input.id
