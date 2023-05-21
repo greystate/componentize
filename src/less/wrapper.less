@@ -9,10 +9,12 @@
 		top: 4px;
 		right: 4px;
 	}
-	
+
 	max-width: 75%;
 	margin: 1em auto;
-	
+
+	.debug & { max-width: none; }
+
 	@media screen and (max-width: @compact_width_breakpoint) {
 		width: auto;
 		max-width: none;
