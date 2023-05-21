@@ -17,15 +17,15 @@ Build your components section like this:
 	<div class="components-description">
 		<!-- Any description you want to have on the page before the component list -->
 	</div>
-	
+
 	<div class="component" data-title="ComponentName">
-		
+
 		<!-- Your component markup here -->
-		
+
 	</div>
-	
+
 	<!-- Additional components -->
-	
+
 </section>
 ```
 
@@ -81,6 +81,6 @@ The `componentize.js` adds some nice enhancements:
 
 - Renders a *Table Of Contents* layer on the right side of the screen, where all the components are listed in alphabetical order, clickable of course :)
 - Adds a textbox for live-filtering the components on the page.
-- Adds a state toggle for components that has a `data-states` attribute
+- Adds state & modifier controls for components that has `data-states` / `data-modifiers` attributes
 
 [submerge]: http://greystate.dk/resources/subtree-merge/?rf=dist&u=greystate&b=master&r=componentize&lf=vendor/componentize
