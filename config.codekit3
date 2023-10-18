@@ -7,7 +7,7 @@
       "uuidString" : "E59CD64C-B67E-4636-96CE-BB21538AC24F"
     }
   ],
-  "creatorBuild" : "34484",
+  "creatorBuild" : "34518",
   "files" : {
     "\/.nova\/Artwork" : {
       "cB" : 0,
@@ -198,6 +198,24 @@
       "mS" : 0,
       "oA" : 1,
       "oAP" : "\/dist\/modifiers.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "rwU" : 0,
+      "sI" : 0,
+      "sU" : 0
+    },
+    "\/src\/less\/nav.less" : {
+      "aP" : 1,
+      "bl" : 1,
+      "co" : 0,
+      "eJ" : 0,
+      "ft" : 1,
+      "iI" : 0,
+      "ma" : 0,
+      "mS" : 0,
+      "oA" : 1,
+      "oAP" : "\/dist\/nav.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -1174,9 +1192,6 @@
       "no-return-assign" : {
         "active" : 0,
         "optionString" : "'except-parens'"
-      },
-      "no-return-await" : {
-        "active" : 0
       },
       "no-script-url" : {
         "active" : 0
