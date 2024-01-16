@@ -65,6 +65,7 @@ There are a couple of helper classes to put on individual components, if necessa
 - `.alt-bg` : Renders a transparent checkerboard background behind the component
 - `.solid-bg` : Renders a solid color behind the component
 - `.space-before`, `.space-after`, `.large-space-before` & `.large-space-after` : Makes extra room for the previous/next component (handy if a component does some position shifting, e.g. pulling an icon partly outside of the box)
+- `.limit-half` & `.limit-third` : Makes sure the component only takes up half (or a third) of the available space in the inline direction (useful for card components that would otherwise fill the screen).
 
 When using `.solid-bg` it's possible to specify a specific background color using a **CSS Custom Property** (aka *CSS Variable*) named `--bg-color`.
 Because of the way CSS Custom Properties work, you can set this variable on any ancestor (e.g. the `<body>`) element to effectively
