@@ -1,6 +1,6 @@
 # Componentize
 
-My way of collecting all components on a single page.
+My system of building components for at website.
 
 <img src="assets/screenshot_componentize.jpg" alt="Componentize Screenshot" />
 
