@@ -1,39 +1,39 @@
 .component {
 	container-type: inline-size;
 	position: relative;
-	margin-top: 3em;
-	margin-bottom: 5em;
+	margin-block-start: 3em;
+	margin-block-end: 5em;
 
 	// Display the name of the component to its left (if provided in the `data-title` attribute)
 	&::before {
-		font-size: 12px;
+		font-size: 0.75rem;
 
 		position: absolute;
 		font-weight: normal;
 		font-family: Inconsolata, Andale Mono, monospace, sans-serif;
 		display: block;
 		content: attr(data-title);
-		right: 100%;
-		margin-right: 20px;
+		inset-inline-end: 100%;
+		margin-inline-end: 20px;
 	}
 
 	// This is what I previously referred to as the `assertRendered()` mixin
 	&:empty, > *:empty {
-		min-height: 3em;
+		min-block-size: 3em;
 		background: hsla(120, 50%, 55%, 0.5);
 	}
 
 	.state-toggle {
 		position: absolute;
-		top: 0;
-		right: -10px;
+		inset-block-start: 0;
+		inset-inline-end: -10px;
 		transform: translateX(100%);
 	}
 
-	@container (inline-size < @compact_width_breakpoint) {
+	@container components-wrapper (inline-size < @compact_width_breakpoint) {
 		&::before {
-			right: auto;
-			bottom: 100%;
+			inset-inline-end: auto;
+			inset-block-end: 100%;
 			padding: 4px 4px 8px;
 			display: inline-block;
 		}
@@ -41,7 +41,7 @@
 		&.solid-bg, &.alt-bg { border-radius: 0; }
 
 		.state-toggle {
-			right: 0;
+			inset-inline-end: 0;
 			transform: none;
 		}
 	}

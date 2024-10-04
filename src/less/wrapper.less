@@ -1,4 +1,9 @@
 .components {
+	container: components-wrapper / inline-size;
+
+	max-inline-size: 75%;
+	margin: 1em auto;
+
 	&::before {
 		content: attr(data-size);
 		display: inline-block;
@@ -6,19 +11,15 @@
 		background: rgba(255, 255, 255, 0.8);
 		color: #000;
 		position: fixed;
-		top: 4px;
-		right: 4px;
+		inset-block-start: 4px;
+		inset-inline-end: 4px;
 	}
 
-	max-width: 75%;
-	margin: 1em auto;
-
-	.debug & { max-width: none; }
+	.debug & { max-inline-size: none; }
 
 	@media screen and (max-width: @compact_width_breakpoint) {
-		width: auto;
-		max-width: none;
-		padding-left: 0;
-		padding-right: 0;
+		inline-size: auto;
+		max-inline-size: none;
+		padding-inline: 0;
 	}
 }
