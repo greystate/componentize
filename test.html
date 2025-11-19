@@ -21,6 +21,13 @@
 		.plain.inverse.selected {
 			box-shadow: 0 0 0 5px #ddd inset;
 		}
+
+		component-viewer:hover,
+		component-viewer:focus-within {
+			--component-border-color: rgba(0 0 0 / 90%);
+			--controls-opacity: 1;
+		}
+
 	</style>
 </head>
 <body>
@@ -32,7 +39,7 @@
 		<p>This is a test page for the various component classes</p>
 	</div>
 
-	<div class="component" data-title="Plain Component" data-modifiers="fat,inverse" data-states="nil,selected">
+	<component-viewer label="Plain Component" modifiers="fat,inverse" states="nil,selected">
 		<div class="plain">
 			<p>Here's two plain paragraphs of text to make it easier to see how everything flows.</p>
 			<p>
@@ -40,30 +47,30 @@
 				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 			</p>
 		</div>
-	</div>
+	</component-viewer>
 
-	<div class="component" data-title="Component w/ modifier" data-modifiers="fat,inverse" data-states="nil,selected">
+	<component-viewer label="Component w/ modifier" modifiers="fat,inverse" states="nil,selected">
 		<div class="plain inverse">
 			<p>This should have the 'inverse' modifier selected already.</p>
 		</div>
-	</div>
+	</component-viewer>
 
-	<div class="component" data-title="Component w/ state" data-modifiers="fat,inverse" data-states="nil,selected">
+	<component-viewer label="Component w/ state" modifiers="fat,inverse" states="nil,selected">
 		<div class="plain selected">
 			<p>This should have the 'selected' state pre-selected.</p>
 		</div>
-	</div>
+	</component-viewer>
 
-	<div class="component alt-bg" data-title="Alternate Background Component">
+	<component-viewer label="Alternate Background Component" data-background="transparent">
 		<p>
 			<mark>
 				This component has the <code>.alt-bg</code> class set, so should be shown on
 				a transparent checkerboard background.
 			</mark>
 		</p>
-	</div>
+	</component-viewer>
 
-	<div class="component solid-bg" data-title="Solid Background Component" data-modifiers="fat,inverse">
+	<component-viewer data-background="solid" label="Solid Background Component" modifiers="fat,inverse">
 		<div class="plain">
 			<p>
 				<mark>
@@ -72,9 +79,9 @@
 				</mark>
 			</p>
 		</div>
-	</div>
+	</component-viewer>
 
-	<div class="component solid-bg" style="--bg-color:#ff8000" data-title="Solid Background Component (Custom)">
+	<!-- <div class="component solid-bg" style="--bg-color:#ff8000" data-title="Solid Background Component (Custom)">
 		<p>
 			<mark>
 				This component has the <code>.solid-bg</code> class set <em>and</em> provides a specific background color
@@ -83,12 +90,41 @@
 		</p>
 	</div>
 
-	<div class="component" data-title="Empty Component (no content)"><!-- Intentionally left empty for testing --></div>
-
-	<div class="component" data-title="Empty Component (w/ empty content element)">
-		<div><!-- Intentionally left empty for testing --></div>
+	<div class="component solid-bg limit-half" data-title="Half Width Component">
+		<p>
+			<mark>
+				This component has the <code>.solid-bg</code> class set, along with the
+				<code>.limit-half</code> class, so should only take up half the width of its container.
+			</mark>
+		</p>
 	</div>
 
+	<div class="component alt-bg limit-third" data-title="Third Width Component">
+		<p>
+			<mark>
+				This component has the <code>.alt-bg</code> class set, along with the
+				<code>.limit-third</code> class, so should only take up a third of the width.
+			</mark>
+		</p>
+	</div> -->
+
+	<component-viewer label="Empty Component (no content)"><!-- Intentionally left empty for testing --></component-viewer>
+
+	<component-viewer label="Empty Component (w/ empty content element)">
+		<div><!-- Intentionally left empty for testing --></div>
+	</component-viewer>
+
+	<component-viewer label="Component w/ state" states="nil,selected">
+		<div class="plain selected">
+			<p>This uses the new &lt;component-viewer&gt; custom element. It should have the 'selected' state pre-selected.</p>
+		</div>
+	</component-viewer>
+
+	<component-viewer label="Component and state" states="nil,selected" modifiers="inverse,lighter,pale">
+		<div class="plain inverse selected">
+			<p>This uses the new &lt;component-viewer&gt; custom element. It should have the 'selected' state pre-selected.</p>
+		</div>
+	</component-viewer>
 </section>
 
 <script src="/dist/componentize.js"></script>
