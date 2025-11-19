@@ -43,7 +43,7 @@
 .components-filter > * + * {
   margin-left: 10px;
 }
-.filtered .component:not(.matched) {
+.filtered component-viewer:not(.matched) {
   display: none;
 }
 .components-toc {
@@ -96,8 +96,10 @@
 .component {
   container-type: inline-size;
   position: relative;
-  margin-block-start: 3em;
-  margin-block-end: 5em;
+  -webkit-margin-before: 3em;
+          margin-block-start: 3em;
+  -webkit-margin-after: 5em;
+          margin-block-end: 5em;
 }
 .component::before {
   font-size: 0.75rem;
@@ -107,7 +109,8 @@
   display: block;
   content: attr(data-title);
   inset-inline-end: 100%;
-  margin-inline-end: 20px;
+  -webkit-margin-end: 20px;
+          margin-inline-end: 20px;
 }
 .component:empty,
 .component > *:empty {
