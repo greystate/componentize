@@ -5,11 +5,11 @@ const KEY_ESC = 27
 function componentFilter(wrapper) {
 	const componentsFilter = document.createElement('div')
 	componentsFilter.classList.add('components-filter')
-	
+
 	const label = document.createElement('label')
 	label.htmlFor = 'components-filter'
 	label.textContent = 'Filter components'
-	
+
 	const input = document.createElement('input')
 	input.id = 'components-filter'
 	input.type = 'text'
@@ -25,7 +25,7 @@ function componentFilter(wrapper) {
 			if (query.length > 2) {
 				currentlyMatching.forEach(component => component.classList.remove(MATCHING_CLASS))
 				wrapper.classList.add(FILTERING_CLASS)
-				const matched = document.querySelectorAll(`[data-title*="${query}" i]`)
+				const matched = document.querySelectorAll(`[label*="${query}" i]`)
 				if (matched) {
 					Array.from(matched).forEach(component => component.classList.add(MATCHING_CLASS))
 				}

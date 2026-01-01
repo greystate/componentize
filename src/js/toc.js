@@ -1,6 +1,26 @@
 import createToggles from './modifiers'
 
 function tableOfContents(items) {
+	// Fork off if we're using the legacy version
+	if (items[0].nodeName != 'COMPONENT-VIEWER') {
+		return tableOfContents_Legacy(items)
+	}
+
+	items.sort((a, b) => a.name > b.name ? 1 : -1)
+
+	const tocElement = document.createElement('section')
+	tocElement.classList.add('components-toc')
+	const entries = [ '<ul>' ]
+	items.forEach((component) => {
+		entries.push(`<li><a href="#${component.id}">${component.name}</a></li>`)
+	})
+
+	entries.push('</ul>')
+	tocElement.innerHTML = entries.join('\n')
+	return tocElement
+}
+
+function tableOfContents_Legacy(items) {
 	items.sort((a, b) => a.dataset.title > b.dataset.title ? 1 : -1)
 	const tocElement = document.createElement('section')
 	tocElement.classList.add('components-toc')
@@ -19,7 +39,7 @@ function tableOfContents(items) {
 			component.setAttribute('id', componentLink)
 		}
 	})
-	
+
 	entries.push('</ul>')
 	tocElement.innerHTML = entries.join('\n')
 	return tocElement

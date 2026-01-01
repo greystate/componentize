@@ -7,23 +7,13 @@
       "uuidString" : "E59CD64C-B67E-4636-96CE-BB21538AC24F"
     }
   ],
-  "creatorBuild" : "34576",
+  "creatorBuild" : "34892",
   "files" : {
-    "\/.nova\/Artwork" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/dist\/.nova\/Artwork",
-      "oF" : 0
-    },
-    "\/.nova\/Configuration.json" : {
-      "ft" : 524288,
+    "\/.nova" : {
+      "ft" : 65536,
       "oA" : 1,
-      "oAP" : "\/dist\/.nova\/Configuration-min.json",
-      "oF" : 0,
-      "oO" : 0,
-      "oS" : 1
+      "oAP" : "\/dist\/.nova",
+      "oF" : 0
     },
     "\/assets\/screenshot_componentize.jpg" : {
       "ft" : 16384,
@@ -71,6 +61,17 @@
       "rFN" : 0,
       "uCM" : 0
     },
+    "\/src\/js\/component-viewer.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 0,
+      "oA" : 1,
+      "oAP" : "\/dist\/component-viewer.js",
+      "oF" : 0,
+      "sC" : 0,
+      "tS" : 0
+    },
     "\/src\/js\/componentize.js" : {
       "bF" : 4,
       "ft" : 64,
@@ -104,6 +105,17 @@
       "sC" : 0,
       "tS" : 0
     },
+    "\/src\/js\/state-controller.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 0,
+      "oA" : 1,
+      "oAP" : "\/dist\/state-controller.js",
+      "oF" : 0,
+      "sC" : 0,
+      "tS" : 0
+    },
     "\/src\/js\/toc.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -124,7 +136,7 @@
       "iI" : 0,
       "ma" : 0,
       "mS" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/dist\/component.css",
       "oF" : 0,
       "oS" : 0,
@@ -196,7 +208,7 @@
       "iI" : 0,
       "ma" : 0,
       "mS" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/dist\/helpers.css",
       "oF" : 0,
       "oS" : 0,
@@ -232,7 +244,7 @@
       "iI" : 0,
       "ma" : 0,
       "mS" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/dist\/states-modifiers.css",
       "oF" : 0,
       "oS" : 0,
@@ -298,7 +310,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets_green",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 632450578.21155202
+    "lastBuiltDate" : 788884922.69039404
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -596,8 +608,6 @@
     "buildFolderActive" : 1,
     "buildFolderName" : "dist",
     "cleanBuild" : 1,
-    "cssoForceMediaMerge" : 0,
-    "cssoRestructure" : 1,
     "environmentVariableEntries" : [
       "NODE_ENV:::production"
     ],
@@ -798,10 +808,6 @@
         "active" : 0,
         "optionString" : "{'before': true, 'after': true, 'overrides': {}}"
       },
-      "line-comment-position" : {
-        "active" : 0,
-        "optionString" : "{'position': 'above'}"
-      },
       "linebreak-style" : {
         "active" : 0,
         "optionString" : "'unix'"
@@ -853,10 +859,6 @@
       "max-statements-per-line" : {
         "active" : 0,
         "optionString" : "{'max': 1}"
-      },
-      "multiline-comment-style" : {
-        "active" : 0,
-        "optionString" : "'starred-block'"
       },
       "multiline-ternary" : {
         "active" : 0,
@@ -999,7 +1001,8 @@
         "active" : 0
       },
       "no-extra-boolean-cast" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'enforceForInnerExpressions': false}"
       },
       "no-extra-label" : {
         "active" : 0
@@ -1084,7 +1087,8 @@
         "optionString" : "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
       },
       "no-misleading-character-class" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : "{'allowEscape': false}"
       },
       "no-mixed-operators" : {
         "active" : 0,
@@ -1240,6 +1244,9 @@
         "active" : 0,
         "optionString" : "{'skipBlankLines': false, 'ignoreComments': false}"
       },
+      "no-unassigned-vars" : {
+        "active" : 0
+      },
       "no-undef" : {
         "active" : 1,
         "optionString" : "{'typeof': false}"
@@ -1320,7 +1327,8 @@
         "active" : 0
       },
       "no-useless-escape" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : "{'allowRegexCharacters': []}"
       },
       "no-useless-rename" : {
         "active" : 0,
@@ -1452,7 +1460,8 @@
         "active" : 0
       },
       "require-unicode-regexp" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : "{'requireFlag': 'u'}"
       },
       "require-yield" : {
         "active" : 1
@@ -1743,11 +1752,9 @@
       "autoOutputPathReplace1" : "sass",
       "autoOutputPathReplace2" : "css",
       "autoOutputPathStyle" : 2,
-      "compilerType" : 1,
       "cssoStyle" : 0,
-      "decimalPrecision" : 10,
       "emitCharset" : 1,
-      "outputStyle" : 0,
+      "outputStyle" : 1,
       "purgeCSSStyle" : 0,
       "shouldRunAutoprefixer" : 1,
       "shouldRunBless" : 1,
@@ -1872,7 +1879,8 @@
     ],
     "rollupTreeshakingEnabled" : 1,
     "rollupTreeshakingModuleSideEffects" : 1,
-    "skippedFoldersString" : "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
+    "sassWarningStyle" : 1,
+    "skippedFoldersString" : "logs,cache,_cache,\/.nova,.idea,_logs,node_modules,log,\/storage\/framework\/sessions",
     "sourceFolderName" : "src",
     "susyVersion" : 3,
     "tsAllowArbitraryExtensions" : 0,
@@ -1892,6 +1900,7 @@
     "tsImportHelpers" : 0,
     "tsIsolatedModules" : 0,
     "tsJSXFactory" : "React.createElement",
+    "tsJSXFragmentFactory" : "Fragment",
     "tsNoEmitHelpers" : 0,
     "tsNoFallthroughCasesInSwitch" : 0,
     "tsNoImplicitAny" : 0,
