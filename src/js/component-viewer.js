@@ -56,6 +56,12 @@ class ComponentViewer extends HTMLElement {
 			background: rgba(0 0 0 / 5%);
 		}
 
+		:host(:hover),
+		:host(:focus-within) {
+			--component-border-color: rgba(0 0 0 / 90%);
+			--controls-opacity: 1;
+		}
+
 		.component {
 			background: white;
 		}
