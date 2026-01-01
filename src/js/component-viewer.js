@@ -65,7 +65,6 @@ class ComponentViewer extends HTMLElement {
 			inline-size: calc(var(--component-size, 100) * 1%);
 		}
 
-
 		:host([data-background="transparent"]) .component {
 			transition: background-color 0.5s linear;
 			padding: 25px;
@@ -94,12 +93,14 @@ class ComponentViewer extends HTMLElement {
 			display: block;
 			align-self: center;
 		}
+
 		.controls label { cursor: pointer; }
 		.controls, .component {
 			transition: border-color 200ms ease-in;
 			border-block-start: 2px solid var(--component-border-color, black);
 			padding: 1rem;
 		}
+
 		.controls fieldset { display: flex; gap: 2em; border: none; font-family: monospace; opacity: var(--controls-opacity, 1); transition: opacity 200ms ease-in; }
 		.controls state-controller > div { display: flex; gap: 0.5em }
 		.controls .sizer { margin-inline-start: auto; }
