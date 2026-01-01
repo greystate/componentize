@@ -54,52 +54,25 @@
 		</div>
 	</component-viewer>
 
-	<component-viewer label="Alternate Background Component" data-background="transparent">
+	<component-viewer label="Alternate Background Component" background="transparent">
 		<p>
 			<mark>
-				This component has the <code>.alt-bg</code> class set, so should be shown on
+				This component has <code>background="transparent"</code> set, so should be shown on
 				a transparent checkerboard background.
 			</mark>
 		</p>
 	</component-viewer>
 
-	<component-viewer data-background="solid" label="Solid Background Component" modifiers="fat,inverse">
+	<component-viewer background="solid" label="Solid Background Component" modifiers="fat,inverse">
 		<div class="plain">
 			<p>
 				<mark>
-					This component has the <code>.solid-bg</code> class set, so should be shown on
+					This component has the <code>background=solid"</code> class set, so should be shown on
 					a solid color background.
 				</mark>
 			</p>
 		</div>
 	</component-viewer>
-
-	<!-- <div class="component solid-bg" style="--bg-color:#ff8000" data-title="Solid Background Component (Custom)">
-		<p>
-			<mark>
-				This component has the <code>.solid-bg</code> class set <em>and</em> provides a specific background color
-				to use, so should be shown on a solid orange background.
-			</mark>
-		</p>
-	</div>
-
-	<div class="component solid-bg limit-half" data-title="Half Width Component">
-		<p>
-			<mark>
-				This component has the <code>.solid-bg</code> class set, along with the
-				<code>.limit-half</code> class, so should only take up half the width of its container.
-			</mark>
-		</p>
-	</div>
-
-	<div class="component alt-bg limit-third" data-title="Third Width Component">
-		<p>
-			<mark>
-				This component has the <code>.alt-bg</code> class set, along with the
-				<code>.limit-third</code> class, so should only take up a third of the width.
-			</mark>
-		</p>
-	</div> -->
 
 	<component-viewer label="Empty Component (no content)"><!-- Intentionally left empty for testing --></component-viewer>
 
