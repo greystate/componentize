@@ -59,22 +59,23 @@ time. They're specified with the `modifiers` attribute:
 ```
 
 
-### Helper classes
+### Helpers
 
-There are a couple of helper classes to put on individual components, if necessary:
+There is a helper attribute that can be put on individual components, if necessary:
 
-- `.alt-bg` : Renders a transparent checkerboard background behind the component
-- `.solid-bg` : Renders a solid color behind the component
-- `.space-before`, `.space-after`, `.large-space-before` & `.large-space-after` : Makes extra room for the previous/next component (handy if a component does some position shifting, e.g. pulling an icon partly outside of the box)
-- `.limit-half` & `.limit-third` : Makes sure the component only takes up half (or a third) of the available space in the inline direction (useful for card components that would otherwise fill the screen).
+- `background` : Set this to `transparent` or `solid` for rendering the component on a
+  transparent checkerboard, or a solid color.
 
-When using `.solid-bg` it's possible to specify a specific background color using a **CSS Custom Property** (aka *CSS Variable*) named `--component-bgcolor`.
-Because of the way CSS Custom Properties work, you can set this variable on any ancestor (e.g. the `<body>`) element to effectively
-override the default `#505050` as specified in the distributed CSS - and *still* override it on a specific component, if needed.
+When using `background="solid"` it's possible to specify a specific background color using
+a**CSS Custom Property** (aka *CSS Variable*) named `--component-solid-bg-color`.
+Because of the way CSS Custom Properties work, you can set this variable on any ancestor
+(e.g. the `<body>`) element to effectively override the default `#505050` as specified in the
+distributed CSS - and *still* override it on a specific component, if needed.
+
 CSS Custom Properties can be set in a style attribute, e.g.:
 
 ```html
-<component-viewer label="Batlogo" class="solid-bg" style="--component-bgcolor: yellow;">
+<component-viewer label="Batlogo" background="solid" style="--component-solid-bg-color: yellow;">
 	<!-- A dark, pure-CSS Batman logo that needs a yellow background maybe? -->
 </component-viewer>
 ```
@@ -84,5 +85,6 @@ The `componentize.js` adds some nice enhancements:
 - Renders a *Table Of Contents* layer on the right side of the screen, where all the components are
   listed in alphabetical order, clickable of course :)
 - Adds a textbox for live-filtering the components on the page.
-- Adds state & modifier controls for components that has `data-states` / `data-modifiers` attributes
+- Adds state & modifier controls for components that has `states` / `modifiers` attributes set.
+- Adds a slider on every component to quickly resize its container.
 
