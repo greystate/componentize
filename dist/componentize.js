@@ -252,14 +252,14 @@
 			--controls-opacity: 1;
 		}
 
-		.component {
-			background: white;
-		}
+		.component-wrapper { background: white; }
 
-		::slotted(*) {
+		.component {
 			box-sizing: border-box;
 			inline-size: calc(var(--component-size, 100) * 1%);
 		}
+
+		::slotted(*) { }
 
 		:host([background="transparent"]) .component {
 			transition: background-color 0.5s linear;
@@ -273,6 +273,7 @@
 		}
 
 		:host([background="solid"]) .component {
+			padding: 25px;
 			background: var(--component-solid-bg-color);
 		}
 
@@ -291,7 +292,7 @@
 		}
 
 		.controls label { cursor: pointer; }
-		.controls, .component {
+		.controls, .component-wrapper {
 			transition: border-color 200ms ease-in;
 			border-block-start: 2px solid var(--component-border-color, black);
 			padding: 1rem;
@@ -308,7 +309,7 @@
 		get template() {
 			const templateElement = document.createElement('template');
 			let html = `<header><h2 class="title">${this.name}</h2><input id="size-controller" class="sizer" type="range" min="25" max"100" value="100" step="25"></header>`;
-				html += `<article class="component"><slot></slot></article>`;
+				html += `<section class="component-wrapper"><article class="component"><slot></slot></article></section>`;
 			if (this.modifiers.length || this.states.length) {
 				html += `<section class="controls"><fieldset><legend>States & modifiers</legend>`;
 				html += this.modifiers.length > 0 ? `<state-controller for="${this.id}" states="${this.modifiers.join(',')}" selected="${this.selectedModifiers}" is-multiple></state-controller>` : '';
