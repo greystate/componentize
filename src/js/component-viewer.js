@@ -163,7 +163,8 @@ function setEventHandler(element) {
 	}
 
 	if (header != null) {
-		header.addEventListener('mousemove', (event) => {
+		const slider = header.querySelector('input.sizer')
+		slider.addEventListener('input', (event) => {
 			if (event.target.type === 'range') {
 				const value = event.target.value
 				element.style.setProperty('--component-size', value)
