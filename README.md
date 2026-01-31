@@ -59,12 +59,13 @@ time. They're specified with the `modifiers` attribute:
 ```
 
 
-### Helpers
+### Helper Attributes
 
-There is a helper attribute that can be put on individual components, if necessary:
+There are a couple of helper attribute that can be put on individual components, if necessary:
 
-- `background` : Set this to `transparent` or `solid` for rendering the component on a
-  transparent checkerboard, or a solid color.
+#### `background`
+Set this to `transparent` or `solid` for rendering the component on a
+transparent checkerboard, or a solid color.
 
 When using `background="solid"` it's possible to specify a specific background color using
 a**CSS Custom Property** (aka *CSS Variable*) named `--component-solid-bg-color`.
@@ -79,6 +80,20 @@ CSS Custom Properties can be set in a style attribute, e.g.:
 	<!-- A dark, pure-CSS Batman logo that needs a yellow background maybe? -->
 </component-viewer>
 ```
+
+#### `size`
+
+Set this to control the initial size of the component. Valid values are `half` and `third`
+
+The component can still be sized with the slider, this just sets the initial size.
+
+```html
+<component-viewer label="Card" size="third">
+	<!-- A card with a square image that would normally take up full width -->
+</component-viewer>
+```
+
+### Extras
 
 The `componentize.js` adds some nice enhancements:
 
