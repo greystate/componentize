@@ -17,6 +17,13 @@ class ComponentViewer extends HTMLElement {
 		return this.getAttribute('modifiers')?.split(',') ?? [ ]
 	}
 
+	get initialSize() {
+		const sizeAttr = this.getAttribute('size') ?? 100
+		if (sizeAttr == 'half') { return 50 }
+		if (sizeAttr == 'third') { return 35 }
+		return sizeAttr
+	}
+
 	get sizeController() {
 		return this.querySelector('#size-controller')
 	}
@@ -42,7 +49,7 @@ class ComponentViewer extends HTMLElement {
 			--component-border-color: rgba(0 0 0 / 10%);
 			--component-solid-bg-color: rgba(80, 80, 80);
 			--controls-opacity: 0.1;
-			--component-size: 100;
+			--component-size: ${this.initialSize};
 
 			transition: border-color 200ms ease-in;
 			display: flex;
@@ -118,7 +125,7 @@ class ComponentViewer extends HTMLElement {
 
 	get template() {
 		const templateElement = document.createElement('template')
-		let html = `<header><h2 class="title">${this.name}</h2><input id="size-controller" class="sizer" type="range" min="25" max"100" value="100" step="25"></header>`
+		let html = `<header><h2 class="title">${this.name}</h2><input id="size-controller" class="sizer" type="range" min="25" max"100" value="${this.initialSize}" step="5"></header>`
 			html += `<section class="component-wrapper"><article class="component"><slot></slot></article></section>`
 		if (this.modifiers.length || this.states.length) {
 			html += `<section class="controls"><fieldset><legend>States & modifiers</legend>`
