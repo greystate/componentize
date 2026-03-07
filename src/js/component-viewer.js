@@ -60,7 +60,6 @@ class ComponentViewer extends HTMLElement {
 			margin-block: 4rem;
 			border-radius: 8px;
 			overflow: clip;
-			background: rgba(0 0 0 / 5%);
 		}
 
 		:host(:hover),
@@ -69,7 +68,6 @@ class ComponentViewer extends HTMLElement {
 			--controls-opacity: 1;
 		}
 
-		.component-wrapper { background: white; }
 
 		.component {
 			box-sizing: border-box;
